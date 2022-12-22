@@ -35,6 +35,16 @@ public class MoodAnalyzer {
                 return "Happy";
             }
         }
-        return "Sad";
+        else
+        {
+            try
+            {
+                throw new MoodAnalyzerException();
+            }
+            catch (MoodAnalyzerException exception)
+            {
+                return "Invalid Mood";
+            }
+        }
     }
 }
