@@ -16,19 +16,25 @@ public class MoodTester {
 
     @Test
     public void testMood() {
-        assertEquals("Happy" , a.analyseMood());
-        assertEquals("Sad" , b.analyseMood());
-        assertEquals("Happy" , c.analyseMood());
+        assertEquals("Happy", a.analyseMood());
+        assertEquals("Sad", b.analyseMood());
+        assertEquals("Happy", c.analyseMood());
     }
 
     @Test
     public void testAnotherMood() {
-        assertEquals("Sad" , obj.checkMood("Sad"));
-        assertEquals("Happy" , obj.checkMood("Happy"));
+        assertEquals("Sad", obj.checkMood("Sad"));
+        assertEquals("Happy", obj.checkMood("Happy"));
     }
 
     @Test
     public void testNullMood() throws MoodAnalyzerException {
         System.out.println(MoodAnalyzer.invalidMoodAnalyser(null));
+    }
+
+    @Test
+    public void testEmptyMood() throws MoodAnalyzerException {
+        System.out.println(MoodAnalyzer.invalidMoodAnalyser(String.valueOf(MoodAnalyzerEnum.invalidMood)));
+        System.out.println(MoodAnalyzer.invalidMoodAnalyser(String.valueOf(MoodAnalyzerEnum.empty)));
     }
 }
